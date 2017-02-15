@@ -5,20 +5,20 @@ from robo_utils import ValidateInput
 
 # Boolean to identify PLACE Command
 PLACE_FLAG = False
-'''
+
 # Check the length of the arguments and validate
 if len(sys.argv) <= 1:
     print("file path not found!")
     print("USAGE : <program name> <Command text file path>")
     exit()
-'''
+
 # validate input class insta
 validateSession = ValidateInput()
 # Surface class insta
 surface = RoboSurface()
 # Valdating text and formatting
-# ValidateInput.processfile(validateSession, sys.argv[1])
-ValidateInput.processfile(validateSession, "O:/input.txt")
+ValidateInput.processfile(validateSession, sys.argv[1])
+# ValidateInput.processfile(validateSession, "O:/input.txt")
 # Move robot based on the saved commands list in ENTERED_COMM in Validate session class
 for case in validateSession.ENTERED_COMM:
     if case.startswith('PLACE'):
