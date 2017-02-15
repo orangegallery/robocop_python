@@ -20,15 +20,12 @@ class RoboSurface(object):
         self.surface_y = y
 
     def place(self, x=0, y=0, op_side="NORTH"):
-        print(x)
         x_ax, y_ax = int(x), int(y)
         self.robo_t1 = RoboUtils(x, y, op_side)
-        print('robo position')
-        print(self.robo_t1.get_position())
 
     def report(self):
         x, y = self.robo_t1.get_position()
-        return x, y, self.robo_t1.side
+        print(x, y, self.robo_t1.side)
 
     def _valid_move(self, x, y):
         if self.surface_x > x >= 0 and self.surface_y > y >= 0:
@@ -39,8 +36,8 @@ class RoboSurface(object):
     def move(self):
         move_func = dict_calc[self.robo_t1.get_facing()][0]
         new_pos = move_func(*self.robo_t1.get_position())
+
         if self._valid_move(*new_pos):
-            #If the move is valid, move robot accordingly
             self.robo_t1.set_position(*new_pos)
         else:
             print("Move restricted. Robocop will fall from table")
