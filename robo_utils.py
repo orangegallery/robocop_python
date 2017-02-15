@@ -1,5 +1,7 @@
 
 
+# LIST OF VALID COMMANDS
+
 class RoboUtils(object):
 
     # constructor
@@ -21,4 +23,13 @@ class RoboUtils(object):
     def get_facing(self):
         return self.side
 
+class ValidateInput(object):
+    VALID_COMMANDS = ['PLACE', 'MOVE', 'LEFT', 'RIGHT', 'REPORT']
+    ENTERED_COMM = []
+    file = open('O:/input.txt', 'r')
+    for line in file:
+        flag = line.split(" ")[0].strip().upper() in VALID_COMMANDS
+        if flag:
+            ENTERED_COMM.append(line.upper())
 
+    file.close()
