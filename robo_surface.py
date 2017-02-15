@@ -40,7 +40,7 @@ class RoboSurface(object):
         if self._valid_move(*new_pos):
             self.robo_t1.set_position(*new_pos)
         else:
-            print("Move restricted. Robocop will fall from table")
+            # print("Move restricted. Robocop will fall from table")
 
     def left(self):
         new_direct = dict_calc[self.robo_t1.get_facing()][1]
