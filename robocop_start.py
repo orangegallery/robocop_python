@@ -12,41 +12,14 @@ surface = RoboSurface()
 for case in validateSession.ENTERED_COMM:
     if case.startswith('PLACE'):
         t1 = case.split(' ')[1]
-        RoboSurface.place(surface, t1.split(',')[0].strip(),t1.split(',')[1].strip(),t1.split(',')[2].strip())
+        RoboSurface.place(surface, int(t1.split(',')[0].strip()),int(t1.split(',')[1].strip()),t1.split(',')[2].strip())
         if not PLACE_FLAG:
             PLACE_FLAG = True
-    if case('MOVE'):
+    if case.strip('MOVE'):
         RoboSurface.move(surface)
-    if case('LEFT'):
+    if case.strip('LEFT'):
         RoboSurface.move(surface)
-    if case('RIGHT'):
+    if case.strip('RIGHT'):
         RoboSurface.right(surface)
-    if case('REPORT'):
+    if case.strip('REPORT'):
         RoboSurface.report(surface)
-
-exit()
-print("Surface started")
-
-
-
-
-
-
-
-
-t5 = RoboSurface.report(surface)
-print(t5)
-
-RoboSurface.move(surface)
-RoboSurface.move(surface)
-# RoboSurface.move(surface)
-# RoboSurface.left(surface)
-# RoboSurface.move(surface)
-RoboSurface.left(surface)
-RoboSurface.move(surface)
-
-print("sleep")
-
-t5 = RoboSurface.report(surface)
-print('final report')
-print(t5)
