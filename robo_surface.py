@@ -12,7 +12,6 @@ class RoboSurface(object):
     surface_x = 0
     surface_y = 0
     robo_t1 = None
-    robo_placed = False
 
     # constructor
     def __init__(self, x=5, y=5, op_side="NORTH"):
@@ -36,11 +35,8 @@ class RoboSurface(object):
     def move(self):
         move_func = dict_calc[self.robo_t1.get_facing()][0]
         new_pos = move_func(*self.robo_t1.get_position())
-
         if self._valid_move(*new_pos):
             self.robo_t1.set_position(*new_pos)
-        else:
-            # print("Move restricted. Robocop will fall from table")
 
     def left(self):
         new_direct = dict_calc[self.robo_t1.get_facing()][1]
