@@ -45,13 +45,3 @@ class RoboSurface(object):
     def right(self):
         new_direct = dict_calc[self.robo_t1.get_facing()][2]
         self.robo_t1.set_facing(new_direct)
-
-
-
-
-
-
-
-
-
-

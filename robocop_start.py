@@ -1,7 +1,7 @@
 # MAIN CLASS
 import sys
 from robo_surface import RoboSurface
-from robo_utils import ValidateInput
+from validate_process import ValidateInput
 
 # Boolean to identify PLACE Command
 PLACE_FLAG = False
