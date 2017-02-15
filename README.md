@@ -1,3 +1,3 @@
 # USAGE
 
-python <program name> <commands input file path>
+"python <program name> <commands input file path>"
